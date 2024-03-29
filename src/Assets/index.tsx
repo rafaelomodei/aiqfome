@@ -7,6 +7,8 @@ import subtractDesabledICON from './SVG/Icons/subtractDesabled.svg';
 import ticketICON from './SVG/Icons/ticket.svg';
 import trashICON from './SVG/Icons/trash.svg';
 import userICON from './SVG/Icons/user.svg';
+import arrowIcon from './SVG/Icons/arrows.svg';
+import searchIcon from './SVG/Icons/search.svg';
 
 import aiqbrandingSVG from './SVG/aiqbranding.svg';
 import logoAiqfomeSVG from './SVG/logoAiqfome.svg';
@@ -24,6 +26,8 @@ export const ICON = {
   ticket: ticketICON,
   trash: trashICON,
   user: userICON,
+  arrow: arrowIcon,
+  search: searchIcon,
 };
 
 export const SVG = {

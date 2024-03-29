@@ -1,3 +1,10 @@
+import { HeaderItem } from '../../Components/Organisms/HeaderItem';
+import { Container } from './styles';
+
 export const Item = () => {
-  return <>Pagina Item</>;
+  return (
+    <Container>
+      <HeaderItem />
+    </Container>
+  );
 };

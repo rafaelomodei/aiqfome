@@ -5,6 +5,13 @@ export const extendThemeChakraUI = extendTheme({
     body: 'Nunito, sans-serif',
     heading: 'Nunito, sans-serif',
   },
+  styles: {
+    global: {
+      'html, body': {
+        color: '#6D6F73',
+      },
+    },
+  },
 });
 
 export const theme = {
@@ -15,7 +22,7 @@ export const theme = {
     background: '#EEF0F5',
     price: '#02A117',
     title: '#202326',
-    text: '#6D6F73',
+    titleSecondary: '#393A3C',
     gray: '#6D6F73',
   },
 };

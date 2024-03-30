@@ -6,7 +6,7 @@ import { PNG } from '../../../Assets';
 
 export const HeaderItem = () => {
   return (
-    <Flex flexDirection='column'>
+    <Flex flexDirection='column' p={6}>
       <TitleItem image={PNG.matsuri} name='Matsuri Concept' />
       <Flex justifyContent='space-between' mt={6} ml={12}>
         <Flex flexDirection='column' gap={8}>

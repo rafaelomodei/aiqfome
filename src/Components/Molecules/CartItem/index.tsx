@@ -1,6 +1,6 @@
-import { Flex, Image, Text } from '@chakra-ui/react';
-import { ICON } from '../../../Assets';
+import { Flex, Text } from '@chakra-ui/react';
 import { theme } from '../../../utils/theme';
+import { SelectItem } from '../../Atoms/SelectItem';
 
 export const CartItem = () => {
   return (
@@ -24,13 +24,7 @@ export const CartItem = () => {
         </Flex>
       </Flex>
 
-      <Flex alignItems='center'>
-        <Image src={ICON.trash} boxSize='36px' />
-        <Text fontSize='lg' mx={4} as='b'>
-          2
-        </Text>
-        <Image src={ICON.add} boxSize='36px' />
-      </Flex>
+      <SelectItem showTrash />
     </Flex>
   );
 };

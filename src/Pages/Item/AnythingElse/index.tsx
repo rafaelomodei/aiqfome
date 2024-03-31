@@ -1,10 +1,27 @@
 import { Box, Checkbox, Flex, Text } from '@chakra-ui/react';
 import { PropertyItem } from '../../../Components/Molecules/PropertyItem';
 import { theme } from '../../../Utils/Theme';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useCartStore } from '../../../Providers/Cart';
+import { PRODUCTS } from '../../../Utils/Constants';
 
 export const AnythingElse = () => {
-  const [value, setValue] = useState('1');
+  const [fortuneCookie, setFortuneCookie] = useState<boolean>(false);
+  const [springRoll, setSpringRoll] = useState<boolean>(false);
+
+  const { addItem, removeItem } = useCartStore();
+
+  useEffect(() => {
+    fortuneCookie
+      ? addItem(PRODUCTS['biscoito da sorte'])
+      : removeItem(PRODUCTS['biscoito da sorte']);
+  }, [fortuneCookie]);
+
+  useEffect(() => {
+    springRoll
+      ? addItem(PRODUCTS['rolinho primavera'])
+      : removeItem(PRODUCTS['rolinho primavera']);
+  }, [springRoll]);
 
   return (
     <Flex py={6} px={5} pl='72px' flexDirection='column'>
@@ -16,7 +33,12 @@ export const AnythingElse = () => {
           alignItems='center'
           justifyContent='space-between'
         >
-          <Checkbox>biscoito da sorte</Checkbox>
+          <Checkbox
+            isChecked={fortuneCookie ? true : false}
+            onChange={(e) => setFortuneCookie(e.target.checked)}
+          >
+            biscoito da sorte
+          </Checkbox>
           <Text fontSize='sm' as='b' color={theme.colors.primary}>
             +R$ 2,00
           </Text>
@@ -31,7 +53,12 @@ export const AnythingElse = () => {
           alignItems='center'
           justifyContent='space-between'
         >
-          <Checkbox>rolinho primavera</Checkbox>
+          <Checkbox
+            isChecked={springRoll ? true : false}
+            onChange={(e) => setSpringRoll(e.target.checked)}
+          >
+            rolinho primavera
+          </Checkbox>
           <Text fontSize='sm' as='b' color={theme.colors.primary}>
             +R$ 8,00
           </Text>

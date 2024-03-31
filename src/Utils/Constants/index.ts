@@ -46,7 +46,7 @@ export const PRODUCTS: { [name: string]: IItem } = {
   'rolinho primavera': {
     id: '8',
     name: 'rolinho primavera',
-    price: 2,
+    price: 8,
     amount: 0,
   },
 };

@@ -1,6 +1,7 @@
 import { Flex, Text } from '@chakra-ui/react';
 import { theme } from '../../../Utils/Theme';
 import { SelectItem } from '../../Atoms/SelectItem';
+import { PRODUCTS } from '../../../Utils/Constants';
 
 export const CartItem = ({ finalPrice }: { finalPrice: number }) => {
   return (
@@ -24,7 +25,7 @@ export const CartItem = ({ finalPrice }: { finalPrice: number }) => {
         </Flex>
       </Flex>
 
-      <SelectItem showTrash value={19.9} />
+      <SelectItem item={PRODUCTS['Ceviche de salmão']} showTrash />
     </Flex>
   );
 };

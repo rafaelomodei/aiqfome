@@ -1,4 +1,4 @@
-import { Box, Checkbox, Flex, Radio, RadioGroup, Text } from '@chakra-ui/react';
+import { Box, Checkbox, Flex, Text } from '@chakra-ui/react';
 import { PropertyItem } from '../../../Components/Molecules/PropertyItem';
 import { theme } from '../../../Utils/Theme';
 import { useState } from 'react';

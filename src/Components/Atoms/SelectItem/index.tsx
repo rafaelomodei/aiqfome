@@ -1,8 +1,8 @@
 import { Flex, Image, Text } from '@chakra-ui/react';
 import { ICON } from '../../../Assets';
 import { ISelectItem } from './interface';
-import { useCart } from '../../../Hooks/useCart';
 import { useState } from 'react';
+import { useCartStore } from '../../../Providers/Cart';
 
 export const SelectItem = (props: ISelectItem) => {
   const { item, showTrash, showLabel, size = 'sm' } = props;
@@ -11,7 +11,7 @@ export const SelectItem = (props: ISelectItem) => {
 
   const isSizeSM = size === 'sm';
 
-  const { addItem, removeItem } = useCart();
+  const { addItem, removeItem } = useCartStore();
 
   const handleClickAdd = () => {
     addItem(item);

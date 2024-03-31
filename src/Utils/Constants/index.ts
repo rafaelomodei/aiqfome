@@ -1,4 +1,4 @@
-import { IItem } from '../../Hooks/useCart/interface';
+import { IItem } from '../../Providers/Cart/interface';
 
 export const PRODUCTS: { [name: string]: IItem } = {
   'Ceviche de salmão': {

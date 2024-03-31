@@ -3,13 +3,13 @@ import { PropertyItem } from '../../../Components/Molecules/PropertyItem';
 import { theme } from '../../../Utils/Theme';
 import { ICON } from '../../../Assets';
 import { useState } from 'react';
-import { useCart } from '../../../Hooks/useCart';
 import { PRODUCTS } from '../../../Utils/Constants';
+import { useCartStore } from '../../../Providers/Cart';
 
 export const WhatSize = () => {
   const [size, setSize] = useState<string>('');
 
-  const { updateItem } = useCart();
+  const { updateItem } = useCartStore();
 
   return (
     <Flex py={6} px={5} pl='72px' flexDirection='column'>
@@ -23,18 +23,19 @@ export const WhatSize = () => {
               alignItems='center'
               justifyContent='space-between'
             >
-              <Radio
-                value='medium'
+              <Flex
                 role='presentation'
                 onClick={() => updateItem(PRODUCTS['Ceviche de salmão'])}
               >
-                <Flex gap={1} alignItems='center'>
-                  <Image src={ICON.price} boxSize={6} />
-                  <Text fontSize='sm' as='b'>
-                    médio
-                  </Text>
-                </Flex>
-              </Radio>
+                <Radio value='medium'>
+                  <Flex gap={1} alignItems='center'>
+                    <Image src={ICON.price} boxSize={6} />
+                    <Text fontSize='sm' as='b'>
+                      médio
+                    </Text>
+                  </Flex>
+                </Radio>
+              </Flex>
               <Flex gap={1} alignItems='center'>
                 <Text fontSize='xs' as='b'>
                   de R$ 22,90 por
@@ -54,8 +55,7 @@ export const WhatSize = () => {
               alignItems='center'
               justifyContent='space-between'
             >
-              <Radio
-                value='big'
+              <Flex
                 role='presentation'
                 onClick={() =>
                   updateItem({
@@ -64,10 +64,12 @@ export const WhatSize = () => {
                   })
                 }
               >
-                <Flex gap={1} alignItems='center'>
-                  <Text fontSize='sm'>grande</Text>
-                </Flex>
-              </Radio>
+                <Radio value='big'>
+                  <Flex gap={1} alignItems='center'>
+                    <Text fontSize='sm'>grande</Text>
+                  </Flex>
+                </Radio>
+              </Flex>
               <Flex gap={1} alignItems='center'>
                 <Text fontSize='sm' as='b' color={theme.colors.primary}>
                   R$ 28,90

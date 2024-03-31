@@ -1,6 +1,6 @@
 import { Flex, Text } from '@chakra-ui/react';
 import { ITitlePropertyItem } from './interface';
-import { theme } from '../../../utils/theme';
+import { theme } from '../../../Utils/Theme';
 
 export const TitlePropertyItem = (props: ITitlePropertyItem) => {
   const { title, description } = props;

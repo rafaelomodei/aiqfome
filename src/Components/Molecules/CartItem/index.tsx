@@ -1,8 +1,8 @@
 import { Flex, Text } from '@chakra-ui/react';
-import { theme } from '../../../utils/theme';
+import { theme } from '../../../Utils/Theme';
 import { SelectItem } from '../../Atoms/SelectItem';
 
-export const CartItem = () => {
+export const CartItem = ({ finalPrice }: { finalPrice: number }) => {
   return (
     <Flex
       alignItems='center'
@@ -19,12 +19,12 @@ export const CartItem = () => {
             total
           </Text>
           <Text fontSize='sm' as='b' color={theme.colors.titleSecondary}>
-            R$ 29,90
+            R$ {finalPrice.toFixed(2)}
           </Text>
         </Flex>
       </Flex>
 
-      <SelectItem showTrash />
+      <SelectItem showTrash value={19.9} />
     </Flex>
   );
 };

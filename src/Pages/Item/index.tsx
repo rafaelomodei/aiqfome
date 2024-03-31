@@ -5,11 +5,19 @@ import { WhatSize } from './WhatSize';
 import { WantDrink } from './WantDrink';
 import { NeedCutlery } from './NeedCutlery';
 import { AnythingElse } from './AnythingElse';
+import { useCart } from '../../Hooks/useCart';
+import { useEffect } from 'react';
 
 export const Item = () => {
+  const { finalPrice } = useCart();
+
+  useEffect(() => {
+    console.info('Item::finalPrice: ', finalPrice);
+  }, []);
+
   return (
     <Container>
-      <HeaderItem />
+      <HeaderItem finalPrice={finalPrice} />
       {/* <TablePropertyItem /> */}
 
       <Divider />

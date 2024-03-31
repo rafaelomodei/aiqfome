@@ -7,7 +7,7 @@ export const PropertyItem = (props: IPropertyItem) => {
   const { title, description, children, isRequired } = props;
 
   return (
-    <Flex flexDirection='column' >
+    <Flex flexDirection='column' py={8} pl={12}>
       <Flex justifyContent='space-between'>
         <Flex flexDirection='column'>
           <Text fontSize='lg' as='b' color={theme.colors.title}>

@@ -1,16 +1,20 @@
 import { Box, Flex, Image, Radio, RadioGroup, Text } from '@chakra-ui/react';
 import { PropertyItem } from '../../../Components/Molecules/PropertyItem';
-import { theme } from '../../../utils/theme';
+import { theme } from '../../../Utils/Theme';
 import { ICON } from '../../../Assets';
 import { useState } from 'react';
+import { useCart } from '../../../Hooks/useCart';
+import { PRODUCTS } from '../../../Utils/Constants';
 
 export const WhatSize = () => {
-  const [value, setValue] = useState('1');
+  const [size, setSize] = useState<string>('');
+
+  const { updateItem } = useCart();
 
   return (
     <Flex py={6} px={5} pl='72px' flexDirection='column'>
       <PropertyItem title='qual o tamanho?' description='escolha 1' isRequired>
-        <RadioGroup onChange={setValue} value={value} w='100%'>
+        <RadioGroup onChange={setSize} value={size} w='100%'>
           <Flex>
             <Flex
               maxW={342}
@@ -19,7 +23,11 @@ export const WhatSize = () => {
               alignItems='center'
               justifyContent='space-between'
             >
-              <Radio value='1'>
+              <Radio
+                value='medium'
+                role='presentation'
+                onClick={() => updateItem(PRODUCTS['Ceviche de salmão'])}
+              >
                 <Flex gap={1} alignItems='center'>
                   <Image src={ICON.price} boxSize={6} />
                   <Text fontSize='sm' as='b'>
@@ -46,7 +54,16 @@ export const WhatSize = () => {
               alignItems='center'
               justifyContent='space-between'
             >
-              <Radio value='2'>
+              <Radio
+                value='big'
+                role='presentation'
+                onClick={() =>
+                  updateItem({
+                    ...PRODUCTS['Ceviche de salmão'],
+                    price: 28.9,
+                  })
+                }
+              >
                 <Flex gap={1} alignItems='center'>
                   <Text fontSize='sm'>grande</Text>
                 </Flex>

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { theme } from '../../../utils/theme';
+import { theme } from '../../../Utils/Theme';
 
 export const Container = styled.header`
   display: flex;

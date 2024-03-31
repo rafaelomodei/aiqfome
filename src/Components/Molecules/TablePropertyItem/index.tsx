@@ -10,7 +10,7 @@ import {
 } from '@chakra-ui/react';
 import { TitlePropertyItem } from '../TitlePropertyItem';
 import { ICON } from '../../../Assets';
-import { theme } from '../../../utils/theme';
+import { theme } from '../../../Utils/Theme';
 
 export const TablePropertyItem = () => {
   const promotionPrice: string = '22,90';

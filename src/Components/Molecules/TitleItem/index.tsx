@@ -1,5 +1,5 @@
 import { Flex, Image, Text } from '@chakra-ui/react';
-import { theme } from '../../../utils/theme';
+import { theme } from '../../../Utils/Theme';
 import { ITitleItem } from './interface';
 
 export const TitleItem = (props: ITitleItem) => {

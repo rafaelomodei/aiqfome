@@ -1,6 +1,6 @@
 import { Image, Input, InputGroup, InputLeftElement } from '@chakra-ui/react';
 import { ICON } from '../../../Assets';
-import { theme } from '../../../utils/theme';
+import { theme } from '../../../Utils/Theme';
 
 export const Search = () => {
   return (

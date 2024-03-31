@@ -1,6 +1,6 @@
 import { Box, Flex, Radio, RadioGroup, Text } from '@chakra-ui/react';
 import { PropertyItem } from '../../../Components/Molecules/PropertyItem';
-import { theme } from '../../../utils/theme';
+import { theme } from '../../../Utils/Theme';
 import { useState } from 'react';
 
 export const NeedCutlery = () => {

@@ -1,7 +1,8 @@
-
+import { IItem } from '../../../Providers/Cart/interface';
 
 export interface ISelectItem {
-  label?: string;
+  item: IItem;
+  showLabel?: boolean;
   showTrash?: boolean;
   size?: 'sm' | 'xs';
 }

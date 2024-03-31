@@ -1,7 +1,7 @@
 import { Button, Flex, Image } from '@chakra-ui/react';
 import { Container } from './styles';
 import { ICON } from '../../../Assets';
-import { theme } from '../../../utils/theme';
+import { theme } from '../../../Utils/Theme';
 import { Address } from '../../Molecules/Address';
 import { Search } from '../../Molecules/Search';
 

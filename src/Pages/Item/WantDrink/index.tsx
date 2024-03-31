@@ -1,7 +1,8 @@
 import { Box, Flex, Text } from '@chakra-ui/react';
 import { PropertyItem } from '../../../Components/Molecules/PropertyItem';
 import { SelectItem } from '../../../Components/Atoms/SelectItem';
-import { theme } from '../../../utils/theme';
+import { theme } from '../../../Utils/Theme';
+import { PRODUCTS } from '../../../Utils/Constants';
 
 export const WantDrink = () => {
   return (
@@ -18,10 +19,10 @@ export const WantDrink = () => {
             alignItems='center'
             justifyContent='space-between'
           >
-            <SelectItem label='coca-cola' size='xs' />
+            <SelectItem item={PRODUCTS['coca-cola']} size='xs' />
 
             <Text fontSize='sm' as='b' color={theme.colors.primary}>
-              +R$ 5,00
+              +R$ {PRODUCTS['coca-cola'].price.toFixed(2)}
             </Text>
           </Flex>
 
@@ -32,10 +33,10 @@ export const WantDrink = () => {
             alignItems='center'
             justifyContent='space-between'
           >
-            <SelectItem label='suco prats laranja' size='xs' />
+            <SelectItem item={PRODUCTS['suco prats laranja']} size='xs' />
 
             <Text fontSize='sm' as='b' color={theme.colors.primary}>
-              +R$ 6,00
+              +R$ {PRODUCTS['suco prats laranja'].price.toFixed(2)}
             </Text>
           </Flex>
 
@@ -45,10 +46,10 @@ export const WantDrink = () => {
             alignItems='center'
             justifyContent='space-between'
           >
-            <SelectItem label='água sem gás' size='xs' />
+            <SelectItem item={PRODUCTS['água sem gás']} size='xs' />
 
             <Text fontSize='sm' as='b' color={theme.colors.primary}>
-              +R$ 3,00
+              +R$ {PRODUCTS['água sem gás'].price.toFixed(2)}
             </Text>
           </Flex>
         </Flex>

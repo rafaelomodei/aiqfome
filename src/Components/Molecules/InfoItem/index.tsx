@@ -1,5 +1,5 @@
 import { Box, Flex, Text } from '@chakra-ui/react';
-import { theme } from '../../../utils/theme';
+import { theme } from '../../../Utils/Theme';
 import { IInfoItem } from './interface';
 
 export const InfoItem = (props: IInfoItem) => {

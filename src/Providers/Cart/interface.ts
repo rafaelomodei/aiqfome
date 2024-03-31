@@ -7,9 +7,10 @@ export interface IItem {
 
 export interface IUseCartContext {
   finalPrice: number;
-  addItem: (item: IItem) => void;
-  updateItem: (item: IItem) => void;
-  removeItem: (item: IItem) => void;
+  addItem: (item: IItem) => IItem[];
+  updateItem: (item: IItem) => IItem[];
+  removeItem: (item: IItem) => IItem[];
+  toggleItem: (item: IItem, oldItem: IItem) => IItem[];
 }
 
 export interface ICartContext {

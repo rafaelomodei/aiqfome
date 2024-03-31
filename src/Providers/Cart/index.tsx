@@ -17,44 +17,74 @@ export const CartProvider = ({ children }: ICartContext) => {
     setFinalPrice(value);
   };
 
-  const addItem = (item: IItem) => {
-    const currentItem = items.find((i) => i.id === item.id);
+  const addItem = (item: IItem): IItem[] => {
+    const hasItem = items.find((i) => i.id === item.id);
 
-    if (!currentItem) return setItems([...items, { ...item, amount: 1 }]);
+    if (!hasItem) {
+      const currentItem = [...items, { ...item, amount: 1 }];
+      setItems(currentItem);
+      return currentItem;
+    }
 
     const othersItems = items.filter((i) => i.id !== item.id);
 
-    setItems([
+    const currentItem = [
       ...othersItems,
-      { ...currentItem, amount: currentItem.amount + 1 },
-    ]);
+      { ...hasItem, amount: hasItem.amount + 1 },
+    ];
+
+    setItems(currentItem);
+    return currentItem;
+  };
+
+  const toggleItem = (item: IItem, oldItem: IItem): IItem[] => {
+    const hasOldItemItem = items.find((i) => i.id === oldItem.id);
+
+    if (!hasOldItemItem) {
+      const currentItem = addItem(item);
+      return currentItem;
+    }
+
+    const othersItems = items.filter((i) => i.id !== oldItem.id);
+    const currentItem = [...othersItems, { ...item, ...{ amount: 1 } }];
+    setItems(currentItem);
+
+    return currentItem;
   };
 
   const updateItem = (item: IItem) => {
-    const currentItem = items.find((i) => i.id === item.id);
-
-    if (!currentItem) return;
+    const hasItem = items.find((i) => i.id === item.id);
 
     const othersItems = items.filter((i) => i.id !== item.id);
+    if (!hasItem) return othersItems;
 
-    setItems([...othersItems, { ...currentItem, ...{ price: item.price } }]);
+    const currentItem = [
+      ...othersItems,
+      { ...hasItem, ...{ price: item.price } },
+    ];
+
+    setItems(currentItem);
+    return currentItem;
   };
 
-  const removeItem = (item: IItem) => {
-    const currentItem = items.find((i) => i.id === item.id);
+  const removeItem = (item: IItem): IItem[] => {
+    const hasItem = items.find((i) => i.id === item.id);
 
-    if (!currentItem) return;
     const othersItems = items.filter((i) => i.id !== item.id);
+    if (!hasItem) return othersItems;
 
-    if (currentItem.amount === 1) {
+    if (hasItem.amount === 1) {
       setItems(othersItems);
-      return;
+      return othersItems;
     }
 
-    setItems([
+    const currentItem = [
       ...othersItems,
-      { ...currentItem, amount: currentItem.amount - 1 },
-    ]);
+      { ...hasItem, amount: hasItem.amount - 1 },
+    ];
+
+    setItems(currentItem);
+    return currentItem;
   };
 
   useEffect(() => {
@@ -68,6 +98,7 @@ export const CartProvider = ({ children }: ICartContext) => {
         addItem,
         updateItem,
         removeItem,
+        toggleItem,
       }}
     >
       {children}

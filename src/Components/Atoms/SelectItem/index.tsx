@@ -5,9 +5,9 @@ import { useState } from 'react';
 import { useCartStore } from '../../../Providers/Cart';
 
 export const SelectItem = (props: ISelectItem) => {
-  const { item, showTrash, showLabel, size = 'sm' } = props;
+  const { item, total, showTrash, showLabel, size = 'sm' } = props;
 
-  const [totalItem, setTotalItem] = useState<number>(0);
+  const [totalItem, setTotalItem] = useState<number>(total ?? 0);
 
   const isSizeSM = size === 'sm';
 
@@ -26,6 +26,11 @@ export const SelectItem = (props: ISelectItem) => {
   };
 
   const handleFirstIcon = () => {
+    if (showTrash && !totalItem)
+      return (
+        <Image src={ICON.trashDisabled} boxSize={isSizeSM ? '36px' : '24px'} />
+      );
+
     if (showTrash && totalItem === 1)
       return (
         <Image
@@ -44,7 +49,7 @@ export const SelectItem = (props: ISelectItem) => {
         onClick={handleClickRemove}
       />
     ) : (
-      <Image src={ICON.subtractDesabled} boxSize={isSizeSM ? '36px' : '24px'} />
+      <Image src={ICON.subtractDisabled} boxSize={isSizeSM ? '36px' : '24px'} />
     );
   };
 

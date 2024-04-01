@@ -11,6 +11,7 @@ export interface IUseCartContext {
   updateItem: (item: IItem) => IItem[];
   removeItem: (item: IItem) => IItem[];
   toggleItem: (item: IItem, oldItem: IItem) => IItem[];
+  findItem: (item: IItem) => IItem | undefined;
 }
 
 export interface ICartContext {

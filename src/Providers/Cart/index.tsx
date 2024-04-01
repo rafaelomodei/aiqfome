@@ -87,6 +87,10 @@ export const CartProvider = ({ children }: ICartContext) => {
     return currentItem;
   };
 
+  const findItem = (item: IItem): IItem | undefined => {
+    return items.find((i) => i.id === item.id);
+  };
+
   useEffect(() => {
     sumFinalPrice();
   }, [items]);
@@ -99,6 +103,7 @@ export const CartProvider = ({ children }: ICartContext) => {
         updateItem,
         removeItem,
         toggleItem,
+        findItem,
       }}
     >
       {children}

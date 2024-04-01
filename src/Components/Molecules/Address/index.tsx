@@ -10,7 +10,7 @@ export const Address = (props: IAdress) => {
       <Image src={SVG.aiqbranding} mr={10} height='40px' />
       <Flex alignItems='center'>
         <Image src={ICON.gps} mr={2.5} boxSize='24px' />
-        <Box>
+        <Box minW={200}>
           <Text color='#EECFFC' fontSize='sm' as='b'>
             entregando em
           </Text>

@@ -3,9 +3,10 @@ import gpsICON from './SVG/Icons/gps.svg';
 import priceICON from './SVG/Icons/price.svg';
 import slectedICON from './SVG/Icons/slected.svg';
 import subtractICON from './SVG/Icons/subtract.svg';
-import subtractDesabledICON from './SVG/Icons/subtractDesabled.svg';
+import subtractDisabledICON from './SVG/Icons/subtractDisabled.svg';
 import ticketICON from './SVG/Icons/ticket.svg';
 import trashICON from './SVG/Icons/trash.svg';
+import trashDisabledICON from './SVG/Icons/trashDisabled.svg';
 import userICON from './SVG/Icons/user.svg';
 import arrowIcon from './SVG/Icons/arrows.svg';
 import searchIcon from './SVG/Icons/search.svg';
@@ -22,9 +23,10 @@ export const ICON = {
   price: priceICON,
   slected: slectedICON,
   subtract: subtractICON,
-  subtractDesabled: subtractDesabledICON,
+  subtractDisabled: subtractDisabledICON,
   ticket: ticketICON,
   trash: trashICON,
+  trashDisabled: trashDisabledICON,
   user: userICON,
   arrow: arrowIcon,
   search: searchIcon,
